@@ -1,4 +1,4 @@
-package com.example.edison.familyacoount;
+package com.example.edison.familyacoount.model;
 
 public class Tb_outaccount {
     private int _id;

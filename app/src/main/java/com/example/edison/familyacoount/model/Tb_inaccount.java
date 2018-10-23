@@ -1,4 +1,4 @@
-package com.example.edison.familyacoount;
+package com.example.edison.familyacoount.model;
 
 /**
  * 收入信息实体类
