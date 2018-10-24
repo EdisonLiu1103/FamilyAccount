@@ -46,6 +46,13 @@ public class Login extends AppCompatActivity {
                 txtlogin.setText("");                                   //清空密码文本框
             }
         });
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }
 
