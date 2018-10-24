@@ -2,7 +2,7 @@ package com.example.edison.familyacoount.model;
 
 public class Tb_outaccount {
     private int _id;
-    private String money;
+    private Double money;
     private String time;
     private String type;
     private String address;
@@ -11,9 +11,10 @@ public class Tb_outaccount {
     public Tb_outaccount(){
         super();
     }
-    public Tb_outaccount(int id, String money, String time, String type, String address, String mark){
+    public Tb_outaccount(int id, double money, String time, String type, String address, String mark){
         this._id = id;
         this.money = money;
+        this.time = time;
         this.type = type;
         this.address = address;
         this.mark = mark;
@@ -26,11 +27,11 @@ public class Tb_outaccount {
         this._id = _id;
     }
 
-    public String getMoney(){
+    public Double getMoney(){
         return money;
     }
 
-    public void setMoney(String money) {
+    public void setMoney(Double money) {
         this.money = money;
     }
 

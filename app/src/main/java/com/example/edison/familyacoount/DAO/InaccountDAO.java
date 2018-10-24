@@ -20,7 +20,7 @@ public class InaccountDAO {
      */
 
     public void add(Tb_inaccount tb_inaccount){
-        db = helper.getWritableDatabase();                  //初始化SQLitebase对象
+        db = helper.getWritableDatabase();                  //初始化SQLiteDatabase对象
         //执行添加收入信息操作
         db.execSQL("insert into tb_inaccout(_id, money, time, type, handler, mark)values(?, ?, ?, ?, ?, ?)",new
                 Object[]{
@@ -92,7 +92,7 @@ public class InaccountDAO {
         });
 
         //遍历所有的收入信息
-        while (cursor.moveToNext()) {
+        while (cursor.moveToNext()){
             tb_inaccount.add(new Tb_inaccount(cursor.getInt(cursor.getColumnIndex("_id")), cursor.getDouble(cursor.getColumnIndex("money")),
                     cursor.getString(cursor.getColumnIndex("time")), cursor.getString(cursor.getColumnIndex("type")),
                     cursor.getString(cursor.getColumnIndex("handler")), cursor.getString(cursor.getColumnIndex("mark"))));
