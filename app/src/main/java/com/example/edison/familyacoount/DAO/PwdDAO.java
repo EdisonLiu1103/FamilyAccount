@@ -3,6 +3,7 @@ package com.example.edison.familyacoount.DAO;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.view.View;
 
 import com.example.edison.familyacoount.model.Tb_pwd;
 
@@ -15,6 +16,10 @@ public class PwdDAO {
 
     public PwdDAO(Context context){
         helper = new DBOpenHelper(context);
+    }
+
+    public PwdDAO(View.OnClickListener onClickListener) {
+
     }
 
     /**
@@ -44,10 +49,10 @@ public class PwdDAO {
     /**
      * 查找密码信息
      */
-    public Tb_pwd find(int id){
+    public Tb_pwd find(){
         db = helper.getWritableDatabase();                      //初始化SQLiteDatebase对象
         Cursor cursor = db.rawQuery("select password from tb_pwd ", new String[]{
-                String.valueOf(id)              //根据编号查找密码信息，并储存到Cursor类中
+                //String.valueOf()              //根据编号查找密码信息，并储存到Cursor类中
         });
 
         if(cursor.moveToNext()){                //遍历查找到的密码信息
