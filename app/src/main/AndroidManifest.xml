@@ -18,6 +18,20 @@
         </activity>
         <activity android:name=".Login">
         </activity>
+        <activity android:name=".AddOutaccount">
+        </activity>
+        <activity android:name=".AddInaccount">
+        </activity>
+        <activity android:name=".Outaccount">
+        </activity>
+        <activity android:name=".Inaccount">
+        </activity>
+        <activity android:name=".Showinfo">
+        </activity>
+        <activity android:name=".Sysset">
+        </activity>
+        <activity android:name=".Accountflag">
+        </activity>
     </application>
 
 </manifest>
