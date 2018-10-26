@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.example.edison.familyacoount.DAO.InaccountDAO;
+import com.example.edison.familyacoount.model.Tb_inaccount;
 
 import java.util.Calendar;
 
@@ -37,6 +41,9 @@ public class AddInaccount extends AppCompatActivity {
         btnInSaveButton = findViewById(R.id.btnInSave);
         btnInCancelButton = findViewById(R.id.btnInCancel);
 
+
+
+
         txtInTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +57,40 @@ public class AddInaccount extends AppCompatActivity {
         mDay = c.get(Calendar.DAY_OF_MONTH);
 
         updateDisplay();
+
+        btnInSaveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String strInMoney = txtInMoney.getText().toString();
+                if(!strInMoney.isEmpty()){
+                    //创建InaccountDAO对象
+                    InaccountDAO inaccountDAO = new InaccountDAO(AddInaccount.this);
+                    Tb_inaccount tb_inaccount = new Tb_inaccount(
+                            inaccountDAO.getMaxId()+1, Double.parseDouble(strInMoney),
+                            txtInTime.getText().toString(), spInType.getSelectedItem().toString(), txtInHandler.getText().toString(),
+                            txtInMark.getText().toString());
+                            inaccountDAO.add(tb_inaccount);
+                            //弹出提示信息
+                    Toast.makeText(AddInaccount.this, "[The New Inaccount] added successfully!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(AddInaccount.this, "Please input the inaccount amount!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        btnInCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                txtInMoney.setText("");
+                txtInMoney.setHint("0.00");
+                txtInTime.setText("");
+                txtInTime.setHint("2018-01-01");
+                txtInHandler.setText("");
+                txtInMark.setText("");
+                spInType.setSelection(0);
+            }
+        });
     }
 
     private void updateDisplay(){
@@ -74,5 +115,7 @@ public class AddInaccount extends AppCompatActivity {
             updateDisplay();
         }
     };
+
+
 }
 

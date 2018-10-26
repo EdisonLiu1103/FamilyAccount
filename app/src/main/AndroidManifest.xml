@@ -26,11 +26,13 @@
         </activity>
         <activity android:name=".Inaccount">
         </activity>
-        <activity android:name=".Showinfo">
-        </activity>
         <activity android:name=".Sysset">
         </activity>
         <activity android:name=".Accountflag">
+        </activity>
+        <activity android:name=".Inaccountinfo">
+        </activity>
+        <activity android:name=".InfoManage">
         </activity>
     </application>
 
