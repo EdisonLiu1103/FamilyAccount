@@ -1,9 +1,8 @@
 package com.example.edison.familyacoount;
 
 import android.content.Intent;
-import android.icu.text.IDNA;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,7 +26,7 @@ public class Inaccountinfo extends AppCompatActivity {
         setContentView(R.layout.activity_inaccountinfo);
 
         lvinfo = (ListView)findViewById(R.id.lvinaccountInfo);
-        ShowInfo(R.id.btnininfo);
+       // ShowInfo(R.id.btnininfo);
 
         lvinfo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
