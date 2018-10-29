@@ -23,7 +23,7 @@ public class Tb_outaccount {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void setid(int _id) {
         this._id = _id;
     }
 

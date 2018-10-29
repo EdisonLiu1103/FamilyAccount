@@ -3,10 +3,12 @@ package com.example.edison.familyacoount;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.edison.familyacoount.DAO.InaccountDAO;
 import com.example.edison.familyacoount.DAO.OutaccountDAO;
@@ -59,13 +61,65 @@ public class InfoManage extends AppCompatActivity {
             spType.setPrompt(tb_outaccount.getType());                         //显示类别
             txtHA.setText(tb_outaccount.getAddress());                          //显示地点
             txtMark.setText(tb_outaccount.getMark());                           //显示备注
-        }if(strType.equals("btnininfo")) {
+        } if(strType.equals("btnininfo")) {
             tvtitle.setText("Income Manage");
             textView.setText("Handler:");
             //根据编号查找收入信息，并储存到Tb_outaccount对象中
             Tb_inaccount tb_inaccount = inaccountDAO.find(Integer.parseInt(strid));
-
+            txtMoney.setText(String.valueOf(tb_inaccount.getMoney()));          //显示金额
+            txtTime.setText(tb_inaccount.getTime());                            //显示时间
+            spType.setPrompt(tb_inaccount.getType());                           //显示类别
+            txtHA.setText(tb_inaccount.getHandler());                           //显示付款方
+            txtMark.setText(tb_inaccount.getMark());                            //显示备注
         }
+
+
+        /**
+         *
+         * btnEdit的编写
+         */
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(strType.equals("btnoutinfo")){
+                    Tb_outaccount tb_outaccount = new Tb_outaccount();
+                    tb_outaccount.setid(Integer.parseInt(strid));
+                    //设置金额
+                    tb_outaccount.setMoney(Double.parseDouble(txtMoney.getText().toString()));
+                    tb_outaccount.setTime(txtTime.getText().toString());
+                    tb_outaccount.setType(spType.getSelectedItem().toString());
+                    tb_outaccount.setAddress(txtHA.getText().toString());
+                    tb_outaccount.setMark(txtMark.getText().toString());
+                    outaccountDAO.update(tb_outaccount);
+                }
+                else  if(strType.equals("btnininfo")){
+                    Tb_inaccount tb_inaccount = new Tb_inaccount();
+                    tb_inaccount.setId((Integer.parseInt(strid)));
+                    tb_inaccount.setTime(txtTime.getText().toString());
+                    tb_inaccount.setType(spType.getSelectedItem().toString());
+                    tb_inaccount.setHandler(txtHA.getText().toString());
+                    tb_inaccount.setMark(txtMark.getText().toString());
+                    inaccountDAO.update(tb_inaccount);
+                }
+
+                //弹出信息提示
+                Toast.makeText(InfoManage.this, "[数据]修改成功", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(strType.equals("btninoutinfo")){
+                    outaccountDAO.delete(Integer.parseInt(strid));
+                }
+                else  if(strType.equals("btnininfo")){
+                    inaccountDAO.delete(Integer.parseInt(strid));
+                }
+                Toast.makeText(InfoManage.this, "[删除]数据成功", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
