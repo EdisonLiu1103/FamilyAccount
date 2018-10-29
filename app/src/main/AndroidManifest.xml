@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".Showinfo">
         </activity>
+        <activity android:name=".FlagManage">
+        </activity>
     </application>
 
 </manifest>

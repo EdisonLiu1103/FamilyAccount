@@ -20,7 +20,7 @@
             android:gravity="center_horizontal"
             android:layout_gravity="center"
             android:textSize="40sp"
-            android:text="New Flag"
+            android:text="Flag Manage"
             android:textColor="#ffffff"
             android:textStyle="bold"
 
@@ -37,7 +37,7 @@
             android:layout_height="match_parent"
             android:padding="5dp">
             <TextView
-                android:id="@+id/tvFlag"
+                android:id="@+id/tvFlagManage"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:textSize="23sp"
@@ -48,10 +48,10 @@
                 />
 
             <EditText
-                android:id="@+id/txtFlag"
+                android:id="@+id/txtFlagManage"
                 android:layout_width="350dp"
                 android:layout_height="400dp"
-                android:layout_below="@+id/tvFlag"
+                android:layout_below="@+id/tvFlagManage"
                 android:gravity="top"
                 android:singleLine="false"
                 />
@@ -69,18 +69,18 @@
             android:layout_height="match_parent"
             android:padding="10dp">
             <Button
-                android:id="@+id/btnflagCancel"
+                android:id="@+id/btnFlagManageDelete"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="10dp"
-                android:text="Cancel"/>
+                android:text="Delete"/>
             <Button
-                android:id="@+id/btnflagSave"
+                android:id="@+id/btnFlagManageEdit"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toLeftOf="@+id/btnflagCancel"
-                android:text="Save"
+                android:layout_toLeftOf="@+id/btnFlagManageDelete"
+                android:text="Edit"
                 android:maxLength="200"/>
         </RelativeLayout>
     </LinearLayout>

@@ -1,10 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Sysset">
+    tools:context=".Sysset"
+    android:padding="5dp"
+    android:background="#000000">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvPwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:text="Input the password!"
+        android:textColor="#8C6931"
+        android:textSize="25sp"/>
+    <EditText
+        android:id="@+id/txtPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPwd"
+        android:inputType="textPassword"
+        android:hint="Please input the password"
+        android:textColorHint="#ffffff"/>
+    <Button
+        android:id="@+id/btnsetCancel"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPwd"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:text="Set"/>
+    <Button
+        android:id="@+id/btnSet"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPwd"
+        android:layout_toLeftOf="@id/btnsetCancel"
+        android:text="Set"/>
+</RelativeLayout>
