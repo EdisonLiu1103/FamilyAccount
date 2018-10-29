@@ -1,10 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Accountflag">
+    tools:context=".Accountflag"
+    android:orientation="vertical"
+    android:background="#000000">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="3">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:textSize="40sp"
+            android:text="New Flag"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/tvFlag"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textSize="23sp"
+                android:text="Please input the flags, 200 is the upmost."
+                android:textColor="#8C6931"
+                android:layout_alignParentRight="true"
+
+                />
+
+            <EditText
+                android:id="@+id/txtFlag"
+                android:layout_width="350dp"
+                android:layout_height="400dp"
+                android:layout_below="@+id/tvFlag"
+                android:gravity="top"
+                android:singleLine="false"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+            <Button
+                android:id="@+id/btnflagCancel"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:text="Cancel"/>
+            <Button
+                android:id="@+id/btnflagSave"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/btnflagCancel"
+                android:text="Sava"
+                android:maxLength="200"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

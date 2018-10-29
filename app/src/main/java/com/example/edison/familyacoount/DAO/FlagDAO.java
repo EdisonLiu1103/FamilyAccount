@@ -14,7 +14,7 @@ public class FlagDAO {
     private DBOpenHelper helper;
     private SQLiteDatabase db;
 
-    private FlagDAO(Context context){
+    public FlagDAO(Context context){
         helper = new DBOpenHelper(context);
     }
 

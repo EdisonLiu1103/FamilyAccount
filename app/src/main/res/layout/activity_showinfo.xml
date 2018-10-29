@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".Showinfo"
+    android:orientation="vertical"
+    android:layout_marginTop="5dp"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="0.06"></LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+
+
+    <Button
+        android:id="@+id/btnoutinfo"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="OutInfo"
+        android:textSize="20dp"
+        android:textColor="#8C6931"
+        />
+
+    <Button
+        android:id="@+id/btnininfo"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Ininfo"
+        android:textSize="20dp"
+        android:textColor="#8C6931"
+        android:layout_toRightOf="@id/btnoutinfo"
+
+        />
+
+        <Button
+            android:id="@+id/btnflaginfo"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="FlagInfo"
+            android:textSize="20dp"
+            android:textColor="#8C6931"
+            android:layout_toRightOf="@id/btnininfo"
+
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="0.94">
+        <ListView
+            android:id="@+id/lvinfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarAlwaysDrawVerticalTrack="true" ></ListView>
+    </LinearLayout>
+</LinearLayout>
